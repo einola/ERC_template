@@ -81,22 +81,16 @@
 	}
 \fi
 
-
 % Abstract
 \RequirePackage[linewidth=1pt]{mdframed}
 \renewenvironment{abstract}{\mdframed}{\endmdframed
 \iferc@BOne \newpage\fi
 }
 
-
-\RequirePackage{titlesec}
-\iferc@BOne
-	\PassOptionsToPackage{compact,small}{titlesec}
-\fi
-
-\titleformat{\part}
-{\Large\bfseries}{}{0pt}{}
-\titlespacing*{\part}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% Use the \section command for sections a and b
+\renewcommand\thesection{Section \alph{section}:}
+\renewcommand\thesubsection{\arabic{subsection}}
+\@addtoreset{section}{part}
 
 % Hyperlinks and TOC for PDF
 \RequirePackage{hyperref}
@@ -112,12 +106,7 @@
     pdfpagemode=UseOutlines
 }
 
-% Use the \section command for sections a and b
-\renewcommand\thesection{Section \alph{section}:}
-\renewcommand\thesubsection{\arabic{subsection}}
-\@addtoreset{section}{part}
-
-% Environments and coutners for WPs, tasks, objectives, hypotheses, and research questions
+% Environments and counters for WPs, tasks, objectives, hypotheses, and research questions
 % counters
 \newcounter{wpCntr}
 \newcounter{taskCntr}[wpCntr]
@@ -135,10 +124,20 @@
         \belowpdfbookmark{WP\thewpCntr:~#1}{WP\thewpCntr}%
         \subsubsection*{WP\thewpCntr:~#1}}
 
-% Task
+% Tasks
+% For B1 a \task an item within a 'description' environment
+\iferc@BOne
+    \newcommand{\task}[1]%
+        {\refstepcounter{taskCntr}%
+        \item[Task~\thetaskCntr:~#1]}
+\fi
+
+% For B2 a \task a wrapper around \paragraph{}
+\iferc@BTwo
 \newcommand{\task}[1]%
     {\refstepcounter{taskCntr}%
     \paragraph{Task~\thetaskCntr:~#1}}
+\fi
 
 % Objectives (numbered and not)
 \newenvironment{objective*}%
@@ -170,8 +169,8 @@
 \newcommand{\wpref}[1]{WP\ref{#1}}
 \newcommand{\tskref}[1]{T\ref{#1}}
 
-% We can insert PDF pages into the document (useful for B1)
-\RequirePackage{pdfpages}
+% Graphics
+\RequirePackage{graphicx}
 
 % Bibliography
 \RequirePackage{natbib}
