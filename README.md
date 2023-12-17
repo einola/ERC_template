@@ -1,6 +1,6 @@
 # LaTeX templates for ERC (CoG, 2024)
 
-This repository contains LaTeX templates for the last ERC CoG call (2024). It consists of three files:
+This repository contains **_unofficial_** LaTeX templates for the last ERC CoG call (2024). It consists of three files:
 
  1. erc.sty
  2. ERC_CoG_2024_B1_FINAL.tex
