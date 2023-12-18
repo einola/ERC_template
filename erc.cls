@@ -28,7 +28,7 @@
 \fancyhead[L]{\textcolor{gray}{\emph{\@authorlastname}}}
 \fancyfoot[C]{\textcolor{gray}{\thepage}}
 \fancyhead[R]{\textcolor{gray}{{\@acronym}}}
-\setlength{\headheight}{14pt}
+\setlength{\headheight}{14.5pt}
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -127,14 +127,14 @@
         \subsubsection*{WP\thewpCntr:~#1}}
 
 % Tasks
-% For B1 a \task an item within a 'description' environment
+% For B1 a \task is an item within a 'description' environment
 \iferc@BOne
     \newcommand{\task}[1]%
         {\refstepcounter{taskCntr}%
-        \item[Task~\thetaskCntr:~#1]}
+        \item[Task~\thetaskCntr:]~#1}
 \fi
 
-% For B2 a \task a wrapper around \paragraph{}
+% For B2 a \task is a wrapper around \paragraph{}
 \iferc@BTwo
 \newcommand{\task}[1]%
     {\refstepcounter{taskCntr}%
