@@ -1,19 +1,21 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{erc}
+\ProvidesClass{erc}[2023/12/18 ERC template class]
 
-% Page setup
-\PassOptionsToClass{11pt,a4paper}{article}
-\RequirePackage[left=2cm,top=1.8cm,bottom=1.5cm,right=2cm,headsep=.45cm,footskip=.8cm]{geometry}
-
-% Formatting options BOne or BTwo
+% Class options BOne or BTwo
 \newif\iferc@BOne
 \newif\iferc@BTwo
 
 \DeclareOption{b1}{\erc@BOnetrue\erc@BTwofalse}
 \DeclareOption{b2}{\erc@BOnefalse\erc@BTwotrue}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 
 \ExecuteOptions{b1}
 \ProcessOptions\relax
+
+% Page setup
+\LoadClass[11pt,a4paper]{article}
+\RequirePackage[left=2cm,top=1.8cm,bottom=1.5cm,right=2cm,headsep=.45cm,footskip=.8cm]{geometry}
+
 
 % Header
 \RequirePackage{fancyhdr}
@@ -26,7 +28,7 @@
 \fancyhead[L]{\textcolor{gray}{\emph{\@authorlastname}}}
 \fancyfoot[C]{\textcolor{gray}{\thepage}}
 \fancyhead[R]{\textcolor{gray}{{\@acronym}}}
-\setlength{\headheight}{13.1pt}
+\setlength{\headheight}{14pt}
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
