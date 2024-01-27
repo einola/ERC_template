@@ -35,11 +35,11 @@
 
 % Different headers for B1 and B2
 \iferc@BOne
-	\fancyhead[C]{\textcolor{gray}{Part B1}}
+    \fancyhead[C]{\textcolor{gray}{Part B1}}
 \fi
 
 \iferc@BTwo
-	\fancyhead[C]{\textcolor{gray}{Part B2}}
+    \fancyhead[C]{\textcolor{gray}{Part B2}}
 \fi
 
 % Title
@@ -52,35 +52,35 @@
 \newcommand{\duration}[1]{\def\@duration{#1}}
 
 \iferc@BOne
-	\renewcommand{\maketitle}{
-		{\centering\bfseries\Large
-		\@granttypeyear\par
-		Research proposal [Part B1]\\
-		\normalfont\huge
-		\vspace{.5cm}\@title\par
-		\vspace{.2cm}\@acronym\par
-		\normalfont\normalsize\raggedright\vspace{1cm}
-		\begin{itemize}[noitemsep]
-			\item \textbf{Principal investigator (PI):} \@author
-			\item \textbf{Host institution:} \@institution
-			\item \textbf{Proposal duration:} \@duration~months%
-		\end{itemize}
-		\par\vspace{1em}
-		}
-	}
+    \renewcommand{\maketitle}{
+        {\centering\bfseries\Large
+        \@granttypeyear\par
+        Research proposal [Part B1]\\
+        \normalfont\huge
+        \vspace{.5cm}\@title\par
+        \vspace{.2cm}\@acronym\par
+        \normalfont\normalsize\raggedright\vspace{1cm}
+        \begin{itemize}[noitemsep]
+            \item \textbf{Principal investigator (PI):} \@author
+            \item \textbf{Host institution:} \@institution
+            \item \textbf{Proposal duration:} \@duration~months%
+        \end{itemize}
+        \par\vspace{1em}
+        }
+    }
 \fi
 
 
 \iferc@BTwo
-	\renewcommand{\maketitle}{
-		{\centering\bfseries\Large
-		ERC Starting Grant 2023\\
-		Part B2\\
-		\normalfont\huge
-		\vspace{.5cm}\@title\par
-		\vspace{.5cm}
-		}
-	}
+    \renewcommand{\maketitle}{
+        {\centering\bfseries\Large
+        ERC Starting Grant 2023\\
+        Part B2\\
+        \normalfont\huge
+        \vspace{.5cm}\@title\par
+        \vspace{.5cm}
+        }
+    }
 \fi
 
 % Abstract
