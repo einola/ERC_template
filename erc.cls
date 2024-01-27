@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{erc}[2023/12/18 ERC template class]
+\ProvidesClass{erc}[2024/01/27 ERC template class]
 
 % Class options BOne or BTwo
 \newif\iferc@BOne
@@ -109,8 +109,8 @@
     \hypersetup{
         pdftitle={\@title},%
         pdfauthor={\@author},%
-	pdfsubject={\@granttypeyear},%
-        addtopdfcreator={using erc.cls from https://github.com/einola/ERC\_template}
+        pdfsubject={\@granttypeyear},%
+        addtopdfcreator={using \csname ver@erc.cls\endcsname~(https://github.com/einola/ERC\_template)}
     }
 }
 
