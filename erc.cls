@@ -110,7 +110,7 @@
         pdftitle={\@title},%
         pdfauthor={\@author},%
 	pdfsubject={\@granttypeyear},%
-        pdfproducer={erc.cls from https://github.com/einola/ERC_template}
+        addtopdfcreator={using erc.cls from https://github.com/einola/ERC\_template}
     }
 }
 
