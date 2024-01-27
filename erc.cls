@@ -95,17 +95,23 @@
 \@addtoreset{section}{part}
 
 % Hyperlinks and TOC for PDF
-\RequirePackage{hyperref}
-\hypersetup{
-    plainpages=false,%
-    breaklinks,%
-    colorlinks,%
-    citecolor=black,%
-    filecolor=black,%
-    linkcolor=black,%
-    urlcolor=black,%
-    bookmarksopenlevel=2,%
-    pdfpagemode=UseOutlines
+\RequirePackage[
+        plainpages=false,%
+        breaklinks,%
+        colorlinks,%
+        citecolor=black,%
+        filecolor=black,%
+        linkcolor=black,%
+        urlcolor=black,%
+        bookmarksopenlevel=2,%
+        pdfpagemode=UseOutlines]{hyperref}
+\AtBeginDocument{
+    \hypersetup{
+        pdftitle={\@title},%
+        pdfauthor={\@author},%
+	pdfsubject={\@granttypeyear},%
+        pdfproducer={erc.cls from https://github.com/einola/ERC_template}
+    }
 }
 
 % Environments and counters for WPs, tasks, objectives, hypotheses, and research questions
