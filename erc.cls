@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{erc}[2024/01/27 ERC template class]
+\ProvidesClass{erc}[2024/01/28 ERC template class]
 
 % Class options BOne or BTwo
 \newif\iferc@BOne
@@ -176,9 +176,6 @@
 
 \newcommand{\wpref}[1]{WP\ref{#1}}
 \newcommand{\tskref}[1]{T\ref{#1}}
-
-% Graphics
-\RequirePackage{graphicx}
 
 % Tables
 \RequirePackage{longtable}
